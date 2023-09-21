@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovado ou reprovado?</title>
+</head>
+<body>
+    <h1>APROVADO OU REPROVADO?</h1>
+    <p>Nome: <span id="nome"></span> </p>
+    <p>Nome do professor: <span id="nome2"></span> </p>
+    <p>Primeira nota: <span id="nota1"></span> </p>
+    <p>Segunda nota: <span id="nota2"></span> </p>
+    <p>Terceira nota: <span id="nota3"></span> </p>
+    <p>média: <span id="media"></span> </p>
+    <p>Situação do aluno: <span id="retorno"></span> </p>
+
+    <script>
+        let nome = prompt("Qual o nome do aluno?");
+        let nome2 = prompt("Qual o nome do professor?");
+        let nota1 = prompt("Qual é a primeira nota do aluno?");
+        let nota2 = prompt("Qual é a segunda nota do aluno?");
+        let nota3 = prompt("Qual é a terceira nota do aluno?");
+        let media = 0;
+        let retorno = "";
+        
+        media = ((parseInt(nota1) + parseInt(nota2) + parseInt(nota3))/3).toFixed(2);
+
+        if (media<4) {
+            retorno = "O aluno está reprovado"
+        } else if (media <7){
+         retorno = "O aluno está de recuperação"
+        } else if (media <11){
+            retorno = "O aluno está aprovado"
+        } else {
+            retorno = "A média é invalida"
+        }
+    
+
+        document.getElementById("nome").innerHTML = nome;
+        document.getElementById("nome2").innerHTML = nome2;
+        document.getElementById("nota1").innerHTML = nota1;
+        document.getElementById("nota2").innerHTML = nota2;
+        document.getElementById("nota3").innerHTML = nota3;
+        document.getElementById("media").innerHTML = media;
+        document.getElementById("retorno").innerHTML = retorno;
+    
+    </script>
+</body>
+</html>
